@@ -1,13 +1,12 @@
 public class Main {
     public static void main(String[] args) {
         MyArray array = new MyArray(1000, 1000, 0, 999, 0, 999);
-        // прямой доступ
+
         long start = System.nanoTime();
         int x = array.get(500, 500);
         long end = System.nanoTime();
         System.out.println("Прямой доступ: " + (end - start) + " наносекунд");
 
-        // определяющие векторы
         start = System.nanoTime();
         int[] rowVectors = array.getRowVectors();
         int[] colVectors = array.getColVectors();
@@ -15,7 +14,6 @@ public class Main {
         end = System.nanoTime();
         System.out.println("Определяющие векторы: " + (end - start) + " наносекунд");
 
-        // векторы Айлиффа
         start = System.nanoTime();
         int[][] iliffeVectors = array.getIliffeVectors();
         x = iliffeVectors[500][500];
